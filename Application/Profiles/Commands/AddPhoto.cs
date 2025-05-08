@@ -32,7 +32,7 @@ public class AddPhoto
                 UserId = user.Id
             };
 
-            user.ImgaeUrl ??= photo.Url;
+            user.ImageUrl ??= photo.Url;
 
             dbContext.Photos.Add(photo);
 

@@ -41,7 +41,7 @@ public class AccountController(SignInManager<User> signInManager) : BaseApiContr
 
         if (user == null) return Unauthorized();
 
-        return Ok(new { user.DisplayName, user.Email, user.Id, user.ImgaeUrl });
+        return Ok(new { user.DisplayName, user.Email, user.Id, user.ImageUrl });
     }
 
     [HttpPost("logout")]
