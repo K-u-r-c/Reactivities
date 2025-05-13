@@ -11,12 +11,18 @@ export default function ProfilePhotos() {
     return <Typography>No photos found for this user.</Typography>;
 
   return (
-    <ImageList sx={{ width: 500, height: 450 }} cols={6} rowHeight={164}>
+    <ImageList sx={{ height: 450 }} cols={6} rowHeight={164}>
       {photos.map((item) => (
         <ImageListItem key={item.id}>
           <img
-            srcSet={`${item.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.url}?w=164&h=164&fit=crop&auto=format`}
+            srcSet={`${item.url.replace(
+              "/upload/",
+              "/upload/w_250,h_250,c_fill,f_auto,dpr_2,g_face/"
+            )}`}
+            src={`${item.url.replace(
+              "/upload/",
+              "/upload/w_250,h_250,c_fill,f_auto,g_face/"
+            )}`}
             alt="User profile image"
             loading="lazy"
           />
