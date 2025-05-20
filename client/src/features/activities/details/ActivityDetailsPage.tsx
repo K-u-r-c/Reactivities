@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useActivities } from "../../../lib/hooks/useActivities";
 import ActivityDetailsHeader from "./ActivityDetailsHeader";
 import ActivityDetailsInfo from "./ActivityDetailsInfo";
-import ActivityDetailsChats from "./ActivityDetailsChats";
+import ActivityDetailsChats from "./ActivityDetailsChat";
 import ActivityDetailsSidebar from "./ActivityDetailsSidebar";
 
 export default function ActivityDetailsPage() {
