@@ -9,7 +9,7 @@ using Persistance;
 
 namespace Application.Activities.Commands;
 
-public class AddComments
+public class AddComment
 {
     public class Command : IRequest<Result<CommentDto>>
     {
