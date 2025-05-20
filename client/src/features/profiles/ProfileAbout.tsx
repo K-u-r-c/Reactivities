@@ -14,7 +14,9 @@ export default function ProfileAbout() {
       <Box display={"flex"} justifyContent={"space-between"}>
         <Typography variant="h5">About {profile?.displayName}</Typography>
         {isCurrentUser && (
-          <Button onClick={() => setEditMode(!editMode)}>Edit profile</Button>
+          <Button onClick={() => setEditMode(!editMode)}>
+            {editMode ? "CANCEL" : "EDIT PROFILE"}
+          </Button>
         )}
       </Box>
       <Divider sx={{ my: 2 }} />
