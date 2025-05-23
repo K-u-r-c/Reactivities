@@ -49,4 +49,10 @@ public class ProfilesController : BaseApiController
             })
         );
     }
+
+    [HttpPost("{userId}/follow")]
+    public async Task<ActionResult> FollowToggle(string userId)
+    {
+        return HandleResult(await Mediator.Send(new FollowToggle.Command { TargetUserID = userId }));
+    }
 }
