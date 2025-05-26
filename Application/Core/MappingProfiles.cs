@@ -13,6 +13,7 @@ public class MappingProfiles : Profile
         CreateMap<Activity, Activity>();
         CreateMap<CreateActivityDto, Activity>();
         CreateMap<EditActivityDto, Activity>();
+        CreateMap<Activity, UserActivity>();
         CreateMap<Activity, ActivityDto>()
             .ForMember(
                 d => d.HostDisplayName,
