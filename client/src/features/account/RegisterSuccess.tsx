@@ -24,7 +24,7 @@ export default function RegisterSuccess({ email }: Props) {
     >
       <Check sx={{ fontSize: 100 }} color="primary" />
       <Typography gutterBottom variant="h3">
-        You have sucessfully registered!
+        You have successfully registered!
       </Typography>
       <Typography gutterBottom variant="h3">
         Please check your email to confirm your account
