@@ -84,17 +84,23 @@ export const useAccount = () => {
     mutationFn: async (email: string) => {
       await agent.post("/forgotPassword", { email });
     },
-    onSuccess: () => {
-      console.log("Udalo sie");
-    },
-    onError: (error) => {
-      console.log(error);
-    },
   });
 
   const resetPassword = useMutation({
     mutationFn: async (data: ResetPassword) => {
       await agent.post("/resetPassword", data);
+    },
+  });
+
+  const fetchGithubToken = useMutation({
+    mutationFn: async (code: string) => {
+      const response = await agent.post(`/account/github-login?code=${code}`);
+      return response.data;
+    },
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({
+        queryKey: ["user"],
+      });
     },
   });
 
@@ -109,5 +115,6 @@ export const useAccount = () => {
     changePassword,
     forgotPassword,
     resetPassword,
+    fetchGithubToken,
   };
 };
