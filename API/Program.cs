@@ -48,6 +48,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateActivityValidator>();
 builder.Services.AddTransient<ExceptionMiddleware>();
 builder.Services.AddIdentityApiEndpoints<User>(opt =>
 {
+    opt.SignIn.RequireConfirmedEmail = true;
     opt.User.RequireUniqueEmail = true;
 })
 .AddRoles<IdentityRole>()
